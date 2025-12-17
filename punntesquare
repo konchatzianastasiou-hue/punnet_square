@@ -1,0 +1,15 @@
+from collections import Counter
+
+def punnett(p1, p2):
+    r=[]
+    for a in p1:
+        for b in p2:
+            r.append("".join(sorted(a+b)))
+    c=Counter(r)
+    for k in c:
+        c[k]/=len(r)
+    return c
+
+p1=input()
+p2=input()
+print(punnett(p1,p2))
